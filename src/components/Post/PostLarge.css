@@ -1,0 +1,12 @@
+.large-card {
+    flex-direction: row;
+}
+
+.large-card img {
+    width: 30%;
+}
+
+.break {
+    flex-basis: 100%;
+    height: 0;
+}
