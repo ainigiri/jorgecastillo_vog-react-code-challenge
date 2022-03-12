@@ -98,7 +98,7 @@ const Home = () => {
 
     return(
         <Container fluid>
-            <Row>
+            <Row className="mt-3">
                 <h2>Check our posts!</h2>
             </Row>
             <Row className="mt-2">

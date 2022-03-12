@@ -55,5 +55,5 @@ export const deletePostAsync = (id) => (dispatch) => {
 
 export const postClearResponsesAsync = () => (dispatch) => {
     dispatch(actions.postClearResponses());
-};
+}
 
