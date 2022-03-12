@@ -6,23 +6,23 @@ const universitiesReducer = (state = initialStates, {type, payload}) => {
         case actionTypes.UNIVERSITIES_LOAD_START:
             return {
                 ...state,
-                isLoading: true,
+                isLoadingUniversities: true,
                 universities: [],
-                errorMessage: null,
+                universitiesErrorMessage: null,
             };
 
         case actionTypes.UNIVERSITIES_LOAD_SUCCESS:
             return {
                 ...state,
-                isLoading: false,
+                isLoadingUniversities: false,
                 universities: payload,
             };
 
         case actionTypes.UNIVERSITIES_LOAD_ERROR:
             return {
                 ...state,
-                isLoading: false,
-                errorMessage: payload,
+                isLoadingUniversities: false,
+                universitiesErrorMessage: payload,
             };
 
         default:

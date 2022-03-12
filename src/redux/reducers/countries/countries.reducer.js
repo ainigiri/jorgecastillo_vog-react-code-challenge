@@ -6,23 +6,23 @@ const countriesReducer = (state = initialStates, {type, payload}) => {
         case actionTypes.COUNTRIES_LOAD_START:
             return {
                 ...state,
-                isLoading: true,
+                isLoadingCountries: true,
                 countries: [],
-                errorMessage: null,
+                countriesErrorMessage: null,
             };
 
         case actionTypes.COUNTRIES_LOAD_SUCCESS:
             return {
                 ...state,
-                isLoading: false,
+                isLoadingCountries: false,
                 countries: payload,
             };
 
         case actionTypes.COUNTRIES_LOAD_ERROR:
             return {
                 ...state,
-                isLoading: false,
-                errorMessage: payload,
+                isLoadingCountries: false,
+                countriesErrorMessage: payload,
             };
 
         default:

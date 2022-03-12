@@ -1,7 +1,7 @@
 import UniversitiesService from "../../../services/universities.service";
 import actions from "./universities.actions";
 
-export const getUniversitiesByCountryAsync = (country) => (dispatch) => {
+export const loadUniversitiesByCountryAsync = (country) => (dispatch) => {
     dispatch(actions.universitiesLoadStart());
 
     UniversitiesService.getUniversitiesByCountry(country)
