@@ -11,20 +11,25 @@ const Universities = () => {
     const { countries, isLoadingCountries, countriesErrorMessage } = useSelector((state) => state.countries);
     const { universities, isLoadingUniversities, universitiesErrorMessage } = useSelector((state) => state.universities);
     const [selectedCountry, setSelectedCountry] = useState(null);
+    // Default country setted to Canada
     const [selectedCountryName, setSelectedCountryName] = useState("Canada");
 
+    // Load countries for selector on mount
     useEffect(() =>{
         dispatch(loadAllCountriesAsync());
     }, []);
 
+    // Load universitites on country selection
     useEffect(() => {
         dispatch(loadUniversitiesByCountryAsync(selectedCountryName));
     }, [selectedCountryName]);
 
+    // Update selected country on countries loaded
     useEffect(() => {
         setSelectedCountry(countries.find((country) => country.name.common === selectedCountryName));
     }, [countries]);
 
+    // Methods
     const handleCountrySelection = (event) => {
         setSelectedCountryName(event.target.value);
         setSelectedCountry(countries.find((country) => country.name.common === event.target.value))
@@ -48,7 +53,7 @@ const Universities = () => {
                     {selectedCountry && <CountryInfo country={selectedCountry} />}
                 </Col>
                 <Col md={8}>
-                    <UniversitiesList universities={universities} />
+                 {universities && (universities.length > 0) ? <UniversitiesList universities={universities} /> : <h4 className="mt-3">We couldn't find any university</h4>}
                 </Col>
             </Row>
         </Container>

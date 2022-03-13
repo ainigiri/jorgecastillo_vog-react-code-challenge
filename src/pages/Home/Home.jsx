@@ -48,10 +48,12 @@ const Home = () => {
         deleteErrorMessage,
     } = useSelector((state) => state.posts)
 
+    // Load posts on mount
     useEffect(() => {
         dispatch(loadBoundedPostsAsync(0, 20))
     }, []);
 
+    // Update posts on serch
     useEffect(() => {
         if(searchId.trim() == '') {
             dispatch(loadBoundedPostsAsync(0, 20));
@@ -60,6 +62,7 @@ const Home = () => {
         dispatch(loadSinglePostAsync(searchId));
     }, [searchId]);
 
+    // Show toast message on success petition and clear the responses 
     useEffect(() => {
         if(createResponse != "" && createResponse != null) {
             setToastMessage(createResponse);
@@ -76,10 +79,12 @@ const Home = () => {
         dispatch(postClearResponsesAsync())
     }, [createResponse, editResponse, deleteResponse]);
 
+    // Print error message on error
     useEffect(() => {
         console.log(createErrorMessage, editErrorMessage, deleteErrorMessage, errorMessage);
     }, [createErrorMessage, editErrorMessage, deleteErrorMessage, errorMessage]);
 
+    // Methods
     const handleSearchId = (input) => setSearchId(input.target.value);
     const handleShowCreateModal = () => setShowCreateModal(true);
     const handleShowEditModal = (post) => {
