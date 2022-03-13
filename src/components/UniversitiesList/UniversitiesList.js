@@ -4,6 +4,7 @@ import { Row, Col, Card } from "react-bootstrap";
 const UniversitiesList = (props) => {
     const [universities, setUniversities] = useState(props.universities);
 
+    // Updates universitites on property change
     useEffect(() => {
         setUniversities(props.universities);
     }, [props.universities]);

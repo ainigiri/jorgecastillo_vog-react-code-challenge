@@ -4,6 +4,7 @@ import { Card, Row, Col } from "react-bootstrap";
 const CountryInfo = (props) => {
     const [country, setCountry] = useState(props.country);
 
+    // Change country info if property change
     useEffect(() => {
         setCountry(props.country);
     }, [props.country]);

@@ -10,6 +10,7 @@ const CreatePostModal = (props) => {
         }
     );
 
+    // Use name property from Form.Control to change post object properties
     const handleNewPostChange = (input) => {
         const { name, value } = input.target;
         setNewPost((prevState) => ({

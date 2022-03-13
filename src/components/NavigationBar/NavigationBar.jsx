@@ -5,6 +5,7 @@ import { Container, Navbar, Nav } from "react-bootstrap";
 const NavigationBar = () => {
     let navigate = useNavigate();
 
+    // Use react-router-dom to navigate 
     const goToRoute = (route) => {
         navigate(route);
     }

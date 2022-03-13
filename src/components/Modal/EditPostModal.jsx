@@ -11,10 +11,12 @@ const EditPostModal = (props) => {
         }
     );
 
+    // Change form properties if we choose another post to edit
     useEffect(() => {
         setEditedPost(() => props.post);
     }, [props.post]);
 
+    // Use name property from Form.Control to change post object properties
     const handlePostChange = (input) => {
         const { name, value } = input.target;
         setEditedPost((prevState) => ({

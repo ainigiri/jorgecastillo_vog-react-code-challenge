@@ -5,6 +5,7 @@ import NavigationBar from './components/NavigationBar/NavigationBar'
 
 import Home from './pages/Home/Home'
 import Universities from './pages/Universities/Universities';
+import Postal from './pages/Postal/Postal';
 
 function App() {
   return (
@@ -17,7 +18,7 @@ function App() {
               <Routes>
                 <Route path="/" element={<Home />} />
                 <Route path="/universities" element={<Universities />} />
-                <Route path="/postal" />
+                <Route path="/postal" element={<Postal />} />
               </Routes>
             </Col>
           </Row>

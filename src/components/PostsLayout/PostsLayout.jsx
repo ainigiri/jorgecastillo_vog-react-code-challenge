@@ -6,6 +6,7 @@ import PostSmall from "../Post/PostSmall";
 const PostsLayout = (props) => {
     const [posts, setPosts] = useState(props.posts);
 
+    // Update the posts on property change
     useEffect(() => {
         setPosts(props.posts);
     }, [props.posts]);
